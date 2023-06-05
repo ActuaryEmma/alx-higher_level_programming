@@ -13,10 +13,7 @@ int check_cycle(listint_t *list)
 		{
 			list2 = list;
 		}
-		else
-		{
-			list2 = list2->next;
-		}
+		list2 = list2->next;
 		list = list->next->next;
 		if (list == list2)
 		{
