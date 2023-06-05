@@ -4,15 +4,10 @@
 int check_cycle(listint_t *list)
 {
 	/* used to traverse and check for a cycle */
-	listint_t *list2 = NULL;
+	listint_t *list2 = list;
 
 	while (list != NULL)
 	{
-		/* This part assigns the first value of list2 */
-		if (list2 == NULL)
-		{
-			list2 = list;
-		}
 		list2 = list2->next;
 		list = list->next->next;
 		if (list == list2)
