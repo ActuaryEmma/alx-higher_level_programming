@@ -8,11 +8,9 @@ if __name__ == '__main__':
         print("0")
     else:
         for i in range(1, length):
-            for j in range(len(sys.argv[i])):
-                # if not a digit
-                if not sys.argv[i][j].isdigit():
-                    print("Error")
-                    sys.exit()
-            # add the integer in the command line
-            total += int(sys.argv[i])
+            try:
+                total += int(sys.argv[i])
+            except ValueError:
+                print("Error: Invalid input")
+                sys.exit()
         print("{}".format(total))
