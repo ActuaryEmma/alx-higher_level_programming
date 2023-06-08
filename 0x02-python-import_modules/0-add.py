@@ -9,4 +9,5 @@ def main():
     print("{} + {} = {}".format(a, b, c))
 
 
-main()
+if __name__ == "__main__":
+    main()
