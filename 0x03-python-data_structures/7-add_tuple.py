@@ -13,4 +13,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
         else:
             val_b = 0
         total.append(val_a + val_b)
-    return (total)
+    return tuple(total)
