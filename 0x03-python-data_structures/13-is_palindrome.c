@@ -44,5 +44,5 @@ int compareLists(listint_t *list1, listint_t *list2)
 		{
 				return (1);
 		}
-		return (1);
+		return (0);
 }
