@@ -35,7 +35,7 @@ int compareLists(listint_t *list1, listint_t *list2)
 		{
 				if (list1->n != list2->n)
 				{
-						return (1);
+						return (0);
 				}
 				list1 = list1->next;
 				list2 = list2->next;
@@ -44,5 +44,5 @@ int compareLists(listint_t *list1, listint_t *list2)
 		{
 				return (1);
 		}
-		return (0);
+		return (1);
 }
