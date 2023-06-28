@@ -33,8 +33,8 @@ class Square:
             print()
             return (None)
         for row in range(0, self.__size, 1):
-            for col in range(0, self.__size, 1): 
-                print('#', end="" )
+            for col in range(0, self.__size, 1):
+                print('#', end="")
             print()
 
     @property
