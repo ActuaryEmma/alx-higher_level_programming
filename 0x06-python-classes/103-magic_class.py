@@ -16,7 +16,7 @@ class MagicClass:
     - area(self): Calculates the area of the magic circle.
     - circumference(self): Calculates the circumference of the magic circle.
     """
-    def __init__(self, radius = 0):
+    def __init__(self, radius=0):
         """
         Initialize the MagicClass instance.
 
