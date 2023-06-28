@@ -28,11 +28,14 @@ class Square:
 
     def my_print(self):
         """prints in stdout the square with the character #"""
-        for i in range(self.__size):
-            if self.__size != 0:
-                print('#' * self.__size)
-            else:
-                print()
+        row, col = 0, 0
+        if self.__size == 0:
+            print()
+            return (None)
+        for row in range(0, self.__size, 1):
+            for col in range(0, self.__size, 1): 
+                print('#', end="" )
+            print()
 
     @property
     def size(self):
