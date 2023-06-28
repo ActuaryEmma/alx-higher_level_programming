@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import math
-import dis
 """
 math module has fuction pi
 Write the Python class MagicClass that does
@@ -27,11 +26,11 @@ class MagicClass:
         Raises:
         - TypeError: If the radius is not a number.
         """
-        self._MagicClass__radius = 0
+        self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         else:
-            self._MagicClass__radius = radius
+            self.__radius = radius
 
     def area(self):
         """
@@ -40,7 +39,7 @@ class MagicClass:
         Returns:
         - float: The area of the magic circle.
         """
-        return self._MagicClass__radius ** 2 * math.pi
+        return self.__radius ** 2 * math.pi
 
     def circumference(self):
         """
@@ -49,5 +48,4 @@ class MagicClass:
         Returns:
         - float: The circumference of the magic circle.
         """
-        return 2 * math.pi * self._MagicClass__radius
-print(dis.dis(MagicClass))
+        return 2 * math.pi * self.__radius
