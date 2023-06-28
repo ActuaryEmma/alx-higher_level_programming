@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import math
 """
 math module has fuction pi
 Write the Python class MagicClass that does
 exactly the same as the following Python bytecode
 """
+import math
 
 
 class MagicClass:
@@ -39,7 +39,7 @@ class MagicClass:
         Returns:
         - float: The area of the magic circle.
         """
-        return self.__radius ** 2 * math.pi
+        return (self.__radius ** 2) * math.pi
 
     def circumference(self):
         """
@@ -48,4 +48,4 @@ class MagicClass:
         Returns:
         - float: The circumference of the magic circle.
         """
-        return 2 * math.pi * self.__radius
+        return (2 * math.pi) * self.__radius
