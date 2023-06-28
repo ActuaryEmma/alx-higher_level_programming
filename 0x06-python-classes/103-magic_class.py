@@ -1,51 +1,29 @@
 #!/usr/bin/python3
 import math
-"""
-math module has fuction pi
-Write the Python class MagicClass that does
-exactly the same as the following Python bytecode
-"""
 
 
 class MagicClass:
     """
-    A class that represents a magic circle.
-
-    Methods:
-    - __init__(self, radius): Initializes MagicClass instance with a radius.
-    - area(self): Calculates the area of the magic circle.
-    - circumference(self): Calculates the circumference of the magic circle.
+    defines a circle
     """
-    def __init__(self, radius):
+
+    def __init__(self, radius=0):
         """
-        Initialize the MagicClass instance.
-
-        Parameters:
-        - radius (int or float): The radius of the magic circle.
-
-        Raises:
-        - TypeError: If the radius is not a number.
+        initializes the circle
         """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            raise TypeError("radius must be a number")
-        else:
-            self.__radius = radius
+            raise TypeError('radius must be a number')
+        self.__radius = radius
 
     def area(self):
         """
-        Calculate the area of the magic circle.
-
-        Returns:
-        - float: The area of the magic circle.
+        returns area of circle
         """
-        return self.__radius ** 2 * math.pi
+        return math.pi * self.__radius ** 2
 
     def circumference(self):
         """
-        Calculate the circumference of the magic circle.
-
-        Returns:
-        - float: The circumference of the magic circle.
+        returns circumference of circle
         """
         return 2 * math.pi * self.__radius
