@@ -1,29 +1,53 @@
 #!/usr/bin/python3
 import math
+import dis
+"""
+math module has fuction pi
+Write the Python class MagicClass that does
+exactly the same as the following Python bytecode
+"""
 
 
 class MagicClass:
     """
-    defines a circle
-    """
+    A class that represents a magic circle.
 
-    def __init__(self, radius=0):
+    Methods:
+    - __init__(self, radius): Initializes MagicClass instance with a radius.
+    - area(self): Calculates the area of the magic circle.
+    - circumference(self): Calculates the circumference of the magic circle.
+    """
+    def __init__(self, radius):
         """
-        initializes the circle
+        Initialize the MagicClass instance.
+
+        Parameters:
+        - radius (int or float): The radius of the magic circle.
+
+        Raises:
+        - TypeError: If the radius is not a number.
         """
-        self.__radius = 0
+        self._MagicClass__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            raise TypeError('radius must be a number')
-        self.__radius = radius
+            raise TypeError("radius must be a number")
+        else:
+            self._MagicClass__radius = radius
 
     def area(self):
         """
-        returns area of circle
+        Calculate the area of the magic circle.
+
+        Returns:
+        - float: The area of the magic circle.
         """
-        return math.pi * self.__radius ** 2
+        return self._MagicClass__radius ** 2 * math.pi
 
     def circumference(self):
         """
-        returns circumference of circle
+        Calculate the circumference of the magic circle.
+
+        Returns:
+        - float: The circumference of the magic circle.
         """
-        return 2 * math.pi * self.__radius
+        return 2 * math.pi * self._MagicClass__radius
+print(dis.dis(MagicClass))
