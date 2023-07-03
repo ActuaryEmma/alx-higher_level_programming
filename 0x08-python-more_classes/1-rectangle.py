@@ -12,6 +12,15 @@ class Rectangle:
         """
         Initialize width and height
         """
+        if type(width) is not int:
+            return TypeError("width must be an integer")
+        if width < 0:
+            return ValueError("width must be >= 0")
+        if type(height) is not int:
+            return TypeError("width must be an integer")
+        if height < 0:
+            return ValueError("width must be >= 0")
+
         self.__width = width
         self.__height = height
 
