@@ -56,11 +56,11 @@ class Rectangle:
     def __str__(self):
         """ print # """
         if self.__width == 0 or self.__height == 0:
-            print()
-            return
+            return ""
         rectangle = ""
-        for _ in range(self.height):
-            for _ in range(self.width):
+        for row in range(self.height):
+            for col in range(self.width):
                 rectangle += "#"
-            rectangle += "\n"
+            if row is not self.__height - 1:
+                rectangle += "\n"
         return rectangle
