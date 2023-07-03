@@ -52,13 +52,15 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return (2 * (self.__width + self.__height))
-	
+
     def __str__(self):
-        row, col = 0, 0
+        """ print # """
         if self.__width == 0 or self.__height == 0:
             print()
             return
-        for row in range((self.__height)):
-            for col in range(self.__width):
-                print("#", end="")
-            print()        
+        rectangle = ""
+        for _ in range(self.height):
+            for _ in range(self.width):
+                rectangle += "#"
+            rectangle += "\n"
+        return rectangle
