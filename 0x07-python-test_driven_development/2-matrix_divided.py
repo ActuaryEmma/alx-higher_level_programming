@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-
+"""
+no module imported
+"""
 def matrix_divided(matrix, div):
+    """
+    method that divided each value in matrix by div if int
+    """
     new_matrix = []
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
