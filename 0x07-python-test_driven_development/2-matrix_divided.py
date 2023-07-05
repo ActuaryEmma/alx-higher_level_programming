@@ -2,6 +2,8 @@
 """
 no module imported
 """
+
+
 def matrix_divided(matrix, div):
     """
     method that divided each value in matrix by div if int

@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+no module
+"""
+
 def text_indentation(text):
     """ fuction to strip words from a string"""
     if type(text) is not str:

@@ -2,6 +2,8 @@
 """
 no module imported
 """
+
+
 def print_square(size):
     """
     prints square of #
