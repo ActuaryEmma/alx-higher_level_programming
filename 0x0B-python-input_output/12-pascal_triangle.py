@@ -3,8 +3,7 @@
 
 
 if __name__ == "__main__":
-    """function doc"""
-
+    """executed if its the main function"""
     def pascal_triangle(n):
         """return list of lists of integers"""
 
