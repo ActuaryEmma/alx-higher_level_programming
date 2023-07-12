@@ -1,11 +1,11 @@
 #!/usr/bin/python3
+"""
+module used from different files
+"""
 from sys import argv
 from json import JSONDecodeError
 from 5-save_to_json_file import save_to_json_file
 from 6-load_from_json_file import load_from_json_file
-"""
-used module from different files
-"""
 
 
 list1 = []
