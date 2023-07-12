@@ -3,6 +3,7 @@
 
 
 if __name__ == "__main__":
+    """function doc"""
 
     def pascal_triangle(n):
         """function"""
