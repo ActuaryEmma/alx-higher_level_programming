@@ -2,9 +2,8 @@
 """
 no module used
 """
-import json
 
 
 def class_to_json(obj):
-    dict_data = json.loads(obj)
-    return dict_data
+    """returns dict representation"""
+    return obj.__dict__
