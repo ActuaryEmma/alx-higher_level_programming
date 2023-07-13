@@ -4,7 +4,6 @@ no module
 """
 
 
-
 class LockedClass:
     """class Lockedclass"""
     def __setattr__(self, attr, value):
