@@ -15,6 +15,20 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def integer_validator(self, name, value):
+        """checks for errors"""
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
+    def integer_validator2(self, name, value):
+        """checks for errors"""
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
+        if not bool(value):
+            raise ValueError(f"{name} must be >= 0") 
+
     @property
     def width(self):
         """getter method"""
@@ -23,10 +37,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setter method"""
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        self.integer_validator("width", value)
         self.__width = value
 
     @property
@@ -37,10 +48,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """setter method"""
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+        self.integer_validator("height", value)
         self.__height = value
 
     @property
@@ -51,10 +59,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """setter method"""
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        if not bool(value):
-            raise ValueError("x must be >= 0")
+        self.integer_validator2("x", value)
         self.__x = value
 
     @property
@@ -65,10 +70,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """setter method"""
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        if not bool(value):
-            raise ValueError("y must be >= 0")
+        self.integer_validator2("y", value)
         self.__y = y
 
     def area(self):
