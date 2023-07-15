@@ -27,7 +27,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if not bool(value):
-            raise ValueError(f"{name} must be >= 0") 
+            raise ValueError(f"{name} must be >= 0")
 
     @property
     def width(self):
@@ -119,3 +119,12 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == "y":
                     self.__y = value
+
+    def to_dictionary(self):
+        """return dictionary representation of a Rectangle"""
+        class_dict = {'x': self._Rectangle__x,
+                      'y': self._Rectangle__y,
+                      'id': self.id,
+                      'height': self._Rectangle__height,
+                      'width': self._Rectangle__width}
+        return class_dict
