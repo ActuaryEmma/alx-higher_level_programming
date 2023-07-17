@@ -18,12 +18,12 @@ class TestRectangle(unittest.TestCase):
         """return value of id, width and height when we have a valid inputs"""
         rec1 = Rectangle(10, 2)
         rec2 = Rectangle(2, 10)
-        self.assertEqual(rec1.id, 2)
+        self.assertEqual(rec1.id, 5)
         self.assertEqual(rec1.width, 10)
         self.assertEqual(rec1.height, 2)
         self.assertEqual(rec1.x, 0)
         self.assertEqual(rec1.y, 0)
-        self.assertEqual(rec2.id, 3)
+        self.assertEqual(rec2.id, 6)
         self.assertEqual(rec2.width, 2)
         self.assertEqual(rec2.height, 10)
         self.assertEqual(rec2.x, 0)
@@ -286,7 +286,18 @@ class TestRectangle(unittest.TestCase):
 
     def test_area_without_values(self):
         """return area of a rectangle"""
-        pass
+        with self.assertRaises(TypeError) as e:
+            rec_none = Rectangle(None, None)
+
+    def test_area_without_width(self):
+        """return area of a rectangle"""
+        with self.assertRaises(TypeError) as e:
+            rec_none_width = Rectangle(None, 3)
+
+    def test_area_without_height(self):
+        """return area of a rectangle"""
+        with self.assertRaises(TypeError) as e:
+            rec_none_height = Rectangle(3, None)
 
 
 if __name__ == '__main__':
