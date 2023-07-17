@@ -322,6 +322,17 @@ class TestRectangle(unittest.TestCase):
         # Assert that the printed output matches the expected output
         self.assertEqual(printed_output, expected_output)
 
+    def test_str_method(self):
+        # Test the __str__ method for rec1
+        rec1 = Rectangle(5, 10, 2, 3, 1)
+        expected_str = "[Rectangle] (1) 2/3 - 5/10"
+        self.assertEqual(str(rec1), expected_str)
+
+        # Create another Rectangle instance for testing
+        rec2 = Rectangle(7, 4, 0, 0, 2)
+        expected_str2 = "[Rectangle] (2) 0/0 - 7/4"
+        self.assertEqual(str(rec2), expected_str2)
+
 
 if __name__ == '__main__':
     unittest.main()
