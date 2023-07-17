@@ -6,6 +6,8 @@ Base and Rectangle has the function to test
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import sys
+from io import StringIO
 
 
 class TestRectangle(unittest.TestCase):
@@ -298,6 +300,27 @@ class TestRectangle(unittest.TestCase):
         """return area of a rectangle"""
         with self.assertRaises(TypeError) as e:
             rec_none_height = Rectangle(3, None)
+
+    def test_display(self):
+        # Redirect the stdout to a StringIO object
+        rec1 = Rectangle(5, 10)
+        output = StringIO()
+        sys.stdout = output
+
+        # Call the display() method
+        rec1.display()
+
+        # Get the printed output from StringIO
+        printed_output = output.getvalue()
+
+        # Reset the stdout
+        sys.stdout = sys.__stdout__
+
+        # Define the expected output
+        expected_output = ("#" * 5 + "\n") * 10
+
+        # Assert that the printed output matches the expected output
+        self.assertEqual(printed_output, expected_output)
 
 
 if __name__ == '__main__':
