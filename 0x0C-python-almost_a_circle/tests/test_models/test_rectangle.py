@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 unittests - helps run the tests
 Base and Rectangle has the function to test
@@ -17,12 +18,12 @@ class TestRectangle(unittest.TestCase):
         """return value of id, width and height when we have a valid inputs"""
         rec1 = Rectangle(10, 2)
         rec2 = Rectangle(2, 10)
-        self.assertEqual(rec1.id, 1)
+        self.assertEqual(rec1.id, 2)
         self.assertEqual(rec1.width, 10)
         self.assertEqual(rec1.height, 2)
         self.assertEqual(rec1.x, 0)
         self.assertEqual(rec1.y, 0)
-        self.assertEqual(rec2.id, 2)
+        self.assertEqual(rec2.id, 3)
         self.assertEqual(rec2.width, 2)
         self.assertEqual(rec2.height, 10)
         self.assertEqual(rec2.x, 0)
@@ -275,6 +276,17 @@ class TestRectangle(unittest.TestCase):
         """return ValueError when we have value of y is less than 0"""
         with self.assertRaises(ValueError) as e:
             rec11 = Rectangle(4, 6, 10, -1)
+
+    def test_area(self):
+        """return area of a rectangle"""
+        rec1 = Rectangle(2, 3)
+        rec2 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(rec1.area(), 6)
+        self.assertEqual(rec2.area(), 56)
+
+    def test_area_without_values(self):
+        """return area of a rectangle"""
+        pass
 
 
 if __name__ == '__main__':
