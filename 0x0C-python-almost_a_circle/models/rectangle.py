@@ -10,10 +10,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialize the attributes"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def integer_validator(self, name, value):
         """checks for errors"""
@@ -26,7 +26,7 @@ class Rectangle(Base):
         """checks for errors"""
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
-        if not bool(value):
+        if value < 0:
             raise ValueError(f"{name} must be >= 0")
 
     @property
@@ -71,7 +71,7 @@ class Rectangle(Base):
     def y(self, value):
         """setter method"""
         self.integer_validator2("y", value)
-        self.__y = y
+        self.__y = value
 
     def area(self):
         """return area of the rectangle"""
