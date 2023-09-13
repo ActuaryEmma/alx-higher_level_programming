@@ -6,3 +6,12 @@ r1.print();
 
 const r2 = new Rectangle(10, 5);
 r2.print();
+
+const r3 = new Rectangle(3, 3);
+r3.print();
+
+const r4 = new Rectangle(3, 10);
+r4.print();
+
+const r5 = new Rectangle(10, 3);
+r5.print();
