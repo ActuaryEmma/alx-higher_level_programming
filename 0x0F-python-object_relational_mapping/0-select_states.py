@@ -2,28 +2,24 @@
 """ MySQLdb provides a way db interact with python scripts
      lists all states from the database hbtn_0e_0_usa"""
 import MySQLdb
-import sys
+from sys import argv
 
-if len(sys.argv) != 4:
-    sys.exit(1)
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+if __name__ == '__main__':
 
-db = MySQLdb.connect(host="localhost",
-                     port=3306,
-                     user="username", passwd="password", db="database")
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=argv[1], passwd=argv[2], db=argv[3])
 
-# prepare cursor object
-cursor = db.cursor()
+    # prepare cursor object
+    cursor = db.cursor()
 
-sql = "SELECT * FROM states ORDER BY id ASC"
+    sql = "SELECT * FROM states ORDER BY id ASC"
 
-try:
-    cursor.execute(sql)
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
-except MySQLdb.Error as e:
-    print(f"Error executing the SELECT quesry: {e}")
-db.close()
+    try:
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
+    except MySQLdb.Error as e:
+        print(f"Error executing the SELECT quesry: {e}")
+    db.close()
