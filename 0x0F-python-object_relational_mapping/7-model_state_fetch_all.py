@@ -7,8 +7,9 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    #create a sesssion
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+                sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    # create a sesssion
     Session = sessionmaker(bind=engine)
     session = Session()
 
@@ -18,4 +19,3 @@ if __name__ == "__main__":
     for state in state_list:
         print("{}: {}".format(state.id, state.name))
     session.close()
-
