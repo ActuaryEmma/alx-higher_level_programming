@@ -12,7 +12,7 @@ if __name__ == '__main__':
     username = argv[1]
     password = argv[2]
     database = argv[3]
-    st_name = argv[4]
+    stName = argv[4]
 
     db = MySQLdb.connect(host="localhost",
                          port=3306,
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     # prepare cursor object
     cursor = db.cursor()
 
-    sql = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(st_name)
+    sql = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(stName)
 
     try:
         cursor.execute(sql)
