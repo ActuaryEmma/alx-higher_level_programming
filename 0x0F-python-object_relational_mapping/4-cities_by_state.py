@@ -22,7 +22,9 @@ if __name__ == '__main__':
     # prepare cursor object
     cursor = db.cursor()
 
-    sql = "SELECT cities.id, cities.name, states.name FROM cities  INNER JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC"
+    sql = "SELECT cities.id, cities.name, states.name FROM cities\
+            INNER JOIN states ON cities.state_id = states.id\
+            ORDER BY cities.id ASC"
 
     try:
         cursor.execute(sql)

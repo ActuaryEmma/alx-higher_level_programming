@@ -23,7 +23,9 @@ if __name__ == '__main__':
     # prepare cursor object
     cursor = db.cursor()
 
-    sql = "SELECT cities.name FROM cities  INNER JOIN states ON cities.state_id = states.id WHERE states.name=%s ORDER BY cities.id ASC"
+    sql = "SELECT cities.name FROM cities\
+            INNER JOIN states ON cities.state_id = states.id
+            WHERE states.name = %s ORDER BY cities.id ASC"
 
     try:
         cursor.execute(sql, (state_name, ))
