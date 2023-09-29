@@ -8,7 +8,7 @@ response.headers: contains dictionary like object that contains the headers
 .get: retrives the value associated with the key "X-Request-Id"
 """
 
-
-req = urllib.request.Request(sys.argv[1])
-with urllib.request.urlopen(req) as response:
-    print(response.headers.get("X-Request-Id"))
+if __name__ == "__main__":
+    req = urllib.request.Request(sys.argv[1])
+    with urllib.request.urlopen(req) as response:
+        print(response.headers.get("X-Request-Id"))
