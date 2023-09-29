@@ -10,7 +10,7 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
-    data = {'email' : email}
+    data = {'email': email}
     try:
         with requests.post(url, data=data) as response:
             response.raise_for_status()
