@@ -13,7 +13,9 @@ if __name__ == "__main__":
     email = sys.argv[2]
     data = {'email': email}
     try:
-        req = requests.post(url, data=data)
-        print(req.text)
+        with requests.post(url, data=data) as response:
+            response.raise_for_status()
+            html = response.text
+        print(html)
     except requests.exceptions.RequestException as e:
         print("Error:", e)
