@@ -5,7 +5,7 @@ requests- interact with web services, API or websites by making HTTP requests
 requests.get : retrive content of a web page
 """
 import requests
-import sys
+from sys import argv
 
 
 if __name__ == "__main__":
