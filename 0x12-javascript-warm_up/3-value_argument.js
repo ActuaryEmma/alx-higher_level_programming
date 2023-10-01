@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // prints the first argument passed to it
 
 if (typeof process.argv[2] === 'undefined') {
