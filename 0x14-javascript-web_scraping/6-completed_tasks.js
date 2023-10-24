@@ -28,7 +28,7 @@ request(url, (err, res, body) => {
       const userId = task.userId;
       // console.log(userId);
       if (!completedTasks[userId]) {
-        completedTasks[userId] = 1;
+        completedTasks[userId] = 0;
       }
       completedTasks[userId]++;
     }
