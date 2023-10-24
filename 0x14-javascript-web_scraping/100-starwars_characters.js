@@ -37,9 +37,12 @@ request(filmUrl, (filmErr, filmRes, filmBody) => {
 
         // iterate thro characters array checking if characterUrls array contain the character's URL
         for (const character of characters) {
-          if (characterUrls.includes(character.url)) {
-            console.log(character.name);
-          }
+		  for (const charUrl of characterUrls) {
+            if (character.url.endsWith(charUrl)) {
+              console.log(character.name);
+			  break;
+            }
+		  }
         }
       }
     });
