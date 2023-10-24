@@ -24,7 +24,7 @@ request(url, options, (err, res, body) => {
   if (err) {
     console.log(err);
   }
-  console.log(body);
+  // console.log(body);
   fs.writeFile(filepath, body, 'utf8', (err) => {
     if (err) {
       console.error(err);
