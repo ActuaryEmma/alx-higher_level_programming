@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// prints all charaters of a star wars movie
 
 const process = require('process');
 const path = require('path');
