@@ -18,9 +18,7 @@ if (process.argv.length !== 4) {
 const url = process.argv[2];
 const filepath = process.argv[3];
 
-const options = { json: true };
-
-request(url, options, (err, res, body) => {
+request(url, (err, res, body) => {
   if (err) {
     console.log(err);
   }
