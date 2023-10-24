@@ -13,7 +13,7 @@ if (process.argv.length !== 3) {
 
 const movieId = process.argv[2];
 const filmUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
-const peopleUrl = 'https://swapi-api.alx-tools.com/api/people';
+// const peopleUrl = 'https://swapi-api.alx-tools.com/api/people';
 
 // fetch information from filmUrl
 request(filmUrl, (filmErr, filmRes, filmBody) => {
@@ -25,26 +25,13 @@ request(filmUrl, (filmErr, filmRes, filmBody) => {
     const characterUrls = filmData.characters;
     // console.log(characterUrls);
 
-    // fectch information from peopleUrl
-    request(peopleUrl, (peopleErr, peopleRes, peopleBody) => {
-      if (peopleErr) {
-        console.log(peopleErr);
-      } else {
-        const peopleData = JSON.parse(peopleBody);
-        // extract array of characters objects
-        const characters = peopleData.results;
-        // console.log(characters);
-
-        // iterate thro characters array checking if characterUrls array contain the character's URL
-        for (const character of characters) {
-          for (const charUrl of characterUrls) {
-            if (character.url.endsWith(charUrl)) {
-              console.log(character.name);
-              break;
-            }
-          }
+    characterUrls.forEach(character => {
+      request(character, (err, res, body) => {
+        if (err) {
+          console.log(err);
         }
-      }
+        console.log(JSON.parse(body).name);
+      });
     });
   }
 });
